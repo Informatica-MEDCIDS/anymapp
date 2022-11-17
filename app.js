@@ -1,39 +1,41 @@
-// "use strict";
-
-/**
- * Module dependencies.
- */
-
+const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+
 const app = express();
-const port = 3000;
 
-// app.use("/user/:id", (req, res, next) => {
-//   console.log("Request Type:", req.method);
-//   next();
-// });
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
 
-app.get(
-  "/user/:id",
-  (req, res, next) => {
-    // if the user ID is 0, skip to the next route
-    if (req.params.id === "0") next("route");
-    // otherwise pass the control to the next middleware function in this stack
-    else next();
-  },
-  (req, res, next) => {
-    // send a regular response
-    res.send("regular");
-  }
-);
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
 
-// handler for the /user/:id path, which sends a special response
-app.get("/user/:id", (req, res, next) => {
-  res.send("special");
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
 });
-// app.use("/static", express.static(path.join(__dirname, "axure")));
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+// error handler
+app.use(function (err, req, res) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
 });
+
+module.exports = app;

@@ -1,69 +1,39 @@
 {
   "name": "anymapp",
   "version": "1.0.0",
-  "main": "app.js",
-  "dependencies": {
-    "accepts": "^1.3.8",
-    "array-flatten": "^1.1.1",
-    "body-parser": "^1.18.3",
-    "bytes": "^3.0.0",
-    "cluster-key-slot": "^1.1.1",
-    "content-disposition": "^0.5.2",
-    "content-type": "^1.0.4",
-    "cookie": "^0.4.1",
-    "cookie-parser": "^1.4.6",
-    "cookie-signature": "^1.0.6",
-    "debug": "^2.6.9",
-    "depd": "^1.1.2",
-    "destroy": "^1.0.4",
-    "ee-first": "^1.1.1",
-    "encodeurl": "^1.0.2",
-    "escape-html": "^1.0.3",
-    "etag": "^1.8.1",
-    "express": "^4.16.4",
-    "finalhandler": "^1.1.1",
-    "forwarded": "^0.2.0",
-    "fresh": "^0.5.2",
-    "generic-pool": "^3.9.0",
-    "http-errors": "^1.6.3",
-    "iconv-lite": "^0.4.23",
-    "inherits": "^2.0.3",
-    "ioredis": "^5.2.4",
-    "ipaddr.js": "^1.9.1",
-    "media-typer": "^0.3.0",
-    "merge-descriptors": "^1.0.1",
-    "methods": "^1.1.2",
-    "mime": "^1.4.1",
-    "mime-db": "^1.52.0",
-    "mime-types": "^2.1.35",
-    "ms": "^2.0.0",
-    "negotiator": "^0.6.3",
-    "on-finished": "^2.3.0",
-    "online": "^0.0.1",
-    "parseurl": "^1.3.3",
-    "path-to-regexp": "^0.1.7",
-    "proxy-addr": "^2.0.7",
-    "qs": "^6.5.2",
-    "range-parser": "^1.2.1",
-    "raw-body": "^2.3.3",
-    "redis": "^4.5.0",
-    "safe-buffer": "^5.1.2",
-    "safer-buffer": "^2.1.2",
-    "send": "^0.16.2",
-    "serve-static": "^1.13.2",
-    "setprototypeof": "^1.1.0",
-    "sqlite3": "^5.1.2",
-    "statuses": "^1.4.0",
-    "type-is": "^1.6.18",
-    "unpipe": "^1.0.0",
-    "utils-merge": "^1.0.1",
-    "vary": "^1.1.2",
-    "yallist": "^4.0.0"
-  },
+  "description": "Anonymous Digital Twin Human-App Interactions",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www",
+    "debug": "node ./bin/www"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/test/**",
+      "**/docs/**"
+    ],
+    "delay": 2500
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Informatica-MEDCIDS/anymapp.git"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "bugs": {
+    "url": "https://github.com/Informatica-MEDCIDS/anymapp/issues"
+  },
+  "homepage": "https://github.com/Informatica-MEDCIDS/anymapp#readme",
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "nodemon": "^2.0.20"
+  }
 }
