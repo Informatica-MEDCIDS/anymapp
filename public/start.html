@@ -24,6 +24,12 @@
     />
     <script type="text/javascript">
       PREVIEW_INFO = { fileName: "Conteudos educacionais web" };
+      AXSHARE_HOST_URL = "http://localhost";
+      AXSHARE_HOST_SECURE_URL = "https://localhost";
+      ACCOUNT_SERVICE_URL = "http://localhost";
+      ACCOUNT_SERVICE_SECURE_URL = "https://localhost";
+      ON_PREM_LDAP_ENABLED = "true";
+      AXSHARE_CLIENT_URL = "https://localhost";
     </script>
     <!-- <script type="text/javascript">
       if (location.href.toString().indexOf("file://localhost/") == 0) {
@@ -91,9 +97,26 @@
         }
       }
     </script>
-    <link type="text/css" rel="Stylesheet" href="plugins/sitemap/styles/sitemap.css" />
-    <link type="text/css" rel="Stylesheet" href="plugins/page_notes/styles/page_notes.css" />
-    <link type="text/css" rel="Stylesheet" href="plugins/debug/styles/debug.css" />
+    <link
+      type="text/css"
+      rel="Stylesheet"
+      href="plugins/sitemap/styles/sitemap.css"
+    />
+    <link
+      type="text/css"
+      rel="Stylesheet"
+      href="plugins/page_notes/styles/page_notes.css"
+    />
+    <link
+      type="text/css"
+      rel="Stylesheet"
+      href="plugins/debug/styles/debug.css"
+    />
+    <link
+      type="text/css"
+      rel="Stylesheet"
+      href="plugins/recordplay/styles/recordplay.css"
+    />
     <!-- <link type="text/css" rel="Stylesheet" href="plugins/handoff/styles/handoff.css" />
     <link type="text/css" rel="Stylesheet" href="plugins/handoff/styles/codemirror.css" /> -->
   </head>
@@ -250,5 +273,18 @@
     <script>
       $(document).ready(content_start_loading);
     </script>
+    <script type="text/javascript">
+      (function() {
+          if ($axure && $axure.loadDocument) {
+              window.parent.postMessage("isAxurePrototype", "*");
+              var origLoadDocument = $axure.loadDocument;
+              $axure.loadDocument = function(doc) {
+                  doc.configuration.prototypeId = '3SIG3P';
+                  doc.configuration.projectName = 'Conteudos educacionais web';
+                  origLoadDocument(doc);
+              };
+          }
+      })();
+  </script>
   </body>
 </html>

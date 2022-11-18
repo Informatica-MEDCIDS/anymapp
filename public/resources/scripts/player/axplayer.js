@@ -3014,6 +3014,12 @@ var toolBarOnly = true;
             }
         });
 
+        // $axure.messageCenter.addMessageListener(function (message, data) {
+        //     if (message == 'logEvent') { //// recordplay.js:149
+        //         console.log
+        //     }
+        // });
+
         $axure.messageCenter.addStateListener('page.data', function (key, value) {
             for (var subKey in value) {
                 _page[subKey] = value[subKey];
@@ -3068,10 +3074,10 @@ var toolBarOnly = true;
         //    - title : the user-visible caption for the plugin
         // ---------------------------------------------
         _player.createPluginHost = function (settings) {
-            if (!settings.context || !(settings.context === 'project' || settings.context === 'inspect')) {
-                //throw ('unknown context type');
-                return false;
-            }
+            // if (!settings.context || !(settings.context === 'project' || settings.context === 'inspect')) {
+            //     // throw ('unknown context type');
+            //     return false;
+            // }
 
             if (settings.id == 'feedbackHost')
                 $('#overflowMenuContainer').prepend('<div id="showCommentsOption" class="showOption" style="order: 2"><div class="overflowOptionCheckbox"></div>Show Comments</div>');
@@ -3084,7 +3090,7 @@ var toolBarOnly = true;
                 if (settings.id == 'handoffHost') { $('#handoffControlFrameHeaderContainer').show(); }
             } else {
                 // Preview Mode
-                if (settings.id == 'handoffHost') { return false; }
+                if (settings.id == 'handoffHost') { $('#handoffControlFrameHeaderContainer').show(); }
             }
 
             pluginIds[pluginIds.length] = settings.id;

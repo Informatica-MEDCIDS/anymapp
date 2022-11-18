@@ -11,6 +11,7 @@
         }
     });
 
+    // var queue = [];
     var queue = [processPagesHint, processConsoleHint, processNotesHint];
 
     function processFromQueue(index) {

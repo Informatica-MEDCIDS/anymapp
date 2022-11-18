@@ -1,7 +1,7 @@
 ﻿// use this to isolate the scope
 (function () {
 
-    // if(!$axure.document.configuration.showConsole) { return; }
+    if(!$axure.document.configuration.showConsole) { return; }
 
     $(document).ready(function () {
         var pluginInfo = {

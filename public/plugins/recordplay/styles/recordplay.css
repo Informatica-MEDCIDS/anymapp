@@ -5,7 +5,7 @@
 }
 
 
-#recordPlayContainer 
+#recordPlayContainer
 {
     overflow: auto;
     width: 100%;
@@ -13,7 +13,7 @@
     padding: 10px 10px 10px 10px;
 }
 
-#recordPlayToolbar 
+#recordPlayToolbar
 {
 	margin: 5px 5px 5px 5px;
     height: 22px;
@@ -41,25 +41,25 @@
 
 #recordPlayToolbar .recordPlayButtonSelected {
     border: 1px solid rgb(0,157,217);
-    background-color : rgb(204,235,248);    
+    background-color : rgb(204,235,248);
 }
 
 /* removed images */
-/*#recordButton {
-    background: url('../../sitemap/styles/images/233_hyperlink_16.png') no-repeat center center;
+#recordButton {
+    background: url('../../sitemap/styles/images/right_arrow.svg') no-repeat center center;
 }
 
 #playButton {
-    background: url('../../sitemap/styles/images/225_responsive_16.png') no-repeat center center;
+    background: url('../../sitemap/styles/images/right_arrow.svg') no-repeat center center;
 }
 
 #stopButton {
-    background: url('../../sitemap/styles/images/228_togglenotes_16.png') no-repeat center center;
+    background: url('../../sitemap/styles/images/right_arrow.svg') no-repeat center center;
 }
 
 #deleteButton {
-    background: url('../../sitemap/styles/images/231_event_16.png') no-repeat center center;
-}*/
+    background: url('../../sitemap/styles/images/right_arrow.svg') no-repeat center center;
+}
 
 #recordNameHeader
 {
@@ -70,13 +70,13 @@
 	white-space: nowrap;
 }
 
-#recordPlayContent 
+#recordPlayContent
 {
     /* yeah??*/
 	overflow: visible;
 }
 
-.recordPlayName 
+.recordPlayName
 {
 	font-size: 12px;
 	margin-bottom: 5px;
@@ -84,7 +84,7 @@
 	white-space: nowrap;
 }
 
-.recordPlay 
+.recordPlay
 {
 	margin-bottom: 10px;
 }

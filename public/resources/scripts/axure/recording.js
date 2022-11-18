@@ -43,8 +43,9 @@ $axure.internal(function($ax) {
     };
 
 
-    $ax.recording.maybeRecordEvent = function(element, eventInfo, axEventObject, timeStamp) {
-    };
+    $ax.recording.maybeRecordEvent = $ax.recording.recordEvent;
+    // function(element, eventInfo, axEventObject, timeStamp) {
+    // };
 
 
     $ax.recording.recordingId = "";
