@@ -1,5 +1,4 @@
-﻿
-//// ******* Internet Explorer MANAGER ******** //
+﻿//// ******* Internet Explorer MANAGER ******** //
 ////this is to handle all the stupid IE Stuff
 //$axure.internal(function($ax) {
 //    if(!IE_10_AND_BELOW) return;
@@ -332,13 +331,11 @@
 //            _fixInputBackground();
 //        });
 
-
 //        _fixAllPngs();
 //        _applyIERotation();
 //        _applyBackground();
 //        _fixInputSize();
 //        _fixInputBackground();
 //    });
-
 
 //});

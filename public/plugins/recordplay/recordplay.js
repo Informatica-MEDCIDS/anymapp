@@ -19,34 +19,34 @@
 
     // bind to the page load
 
-    $axure.page.bind("load.page_notes", function () {
-      $.ajax({
-        type: "POST",
-        url: "/RecordController/ListRecordings",
-        success: function (response) {
-          $("#recordNameHeader").html("");
-          $("#recordPlayContent").html("");
-          //populate the notes
+    // $axure.page.bind("load.page_notes", function () {
+    //   $.ajax({
+    //     type: "POST",
+    //     url: "/RecordController/ListRecordings",
+    //     success: function (response) {
+    //       $("#recordNameHeader").html("");
+    //       $("#recordPlayContent").html("");
+    //       //populate the notes
 
-          axRecordingList = [];
+    //       axRecordingList = [];
 
-          if (!eventList) {
-            recordingIndex = 0;
-            eventList = [];
-            recordingStartTime = 0;
-            bulkEventElement = "";
-            lastBulkEvent = {};
-          }
+    //       if (!eventList) {
+    //         recordingIndex = 0;
+    //         eventList = [];
+    //         recordingStartTime = 0;
+    //         bulkEventElement = "";
+    //         lastBulkEvent = {};
+    //       }
 
-          for (var idx in response.recordingList) {
-            getOneRecording(response.recordingList[idx]);
-          }
+    //       for (var idx in response.recordingList) {
+    //         getOneRecording(response.recordingList[idx]);
+    //       }
 
-          return false;
-        },
-        //                dataType: 'json'
-      });
-    });
+    //       return false;
+    //     },
+    //     //                dataType: 'json'
+    //   });
+    // });
   });
 
   var nameMatcher = new RegExp("^axRecording[0-9]{4}$", "i");
@@ -86,19 +86,19 @@
   };
 
   var getOneRecording = function (recordingItem) {
-    $.ajax({
-      type: "POST",
-      url: "/RecordController/GetRecording",
-      data: { recordingId: recordingItem.recordingId },
-      success: function (response) {
-        axRecordingList[axRecordingList.length] = convertFromJson(response);
-        var axRecordingContainer = $("#recordingContainer")
-          .find("li")
-          .filter(".recordingRootNode");
-        axRecordingContainer.append(_formAxRecordingBranch(response));
-        _attachEventTriggers(response);
-      }, //                dataType: 'json'
-    });
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/RecordController/GetRecording",
+    //   data: { recordingId: recordingItem.recordingId },
+    //   success: function (response) {
+    //     axRecordingList[axRecordingList.length] = convertFromJson(response);
+    //     var axRecordingContainer = $("#recordingContainer")
+    //       .find("li")
+    //       .filter(".recordingRootNode");
+    //     axRecordingContainer.append(_formAxRecordingBranch(response));
+    //     _attachEventTriggers(response);
+    //   }, //                dataType: 'json'
+    // });
   };
 
   var axRecordingList;
@@ -150,6 +150,8 @@
     var lastEvent, lastBulkData;
 
     if (message === "logEvent") {
+      // Franz TODO: first event catch
+      // console.log(message, eventData);
       if (bulkEventElement !== eventData.elementID) {
         lastBulkEvent = {};
         bulkEventElement = eventData.elementID;
@@ -218,27 +220,27 @@
   var _recordClick = function (event) {
     $("#recordButton").addClass("recordPlayButtonSelected");
     recordingIndex++;
-    $axure.recording.startRecord();
+    // $axure.recording.startRecord();
 
     recordingStartTime = new Date().getTime();
 
-    $.ajax({
-      type: "POST",
-      url: "/RecordController/CreateRecording",
-      data: {
-        recordingName: generateRecordingName(),
-        timeStamp: recordingStartTime,
-      },
-      success: function (response) {
-        recordingId = response.recordingId;
-        recordingName = response.recordingName;
-        $axure.messageCenter.postMessage("startRecording", {
-          recordingId: recordingId,
-          recordingName: recordingName,
-        });
-      },
-      //                dataType: 'json'
-    });
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/RecordController/CreateRecording",
+    //   data: {
+    //     recordingName: generateRecordingName(),
+    //     timeStamp: recordingStartTime,
+    //   },
+    //   success: function (response) {
+    //     recordingId = response.recordingId;
+    //     recordingName = response.recordingName;
+    //     $axure.messageCenter.postMessage("startRecording", {
+    //       recordingId: recordingId,
+    //       recordingName: recordingName,
+    //     });
+    //   },
+    //   //                dataType: 'json'
+    // });
   };
 
   var _playClick = function (event) {
@@ -253,7 +255,7 @@
     $("#sitemapLinksContainer").toggle();
     if ($("#recordButton").is(".recordPlayButtonSelected")) {
       $("#recordButton").removeClass("recordPlayButtonSelected");
-    //   $axure.recording.stopRecord();
+      //   $axure.recording.stopRecord();
 
       axRecording = {
         recordingId: recordingId,
@@ -261,7 +263,7 @@
         eventList: eventList,
       };
 
-      axRecordingList[axRecordingList.length] = axRecording;
+      // axRecordingList[axRecordingList.length] = axRecording;
       axRecordingContainer = $("#recordingContainer")
         .find("li")
         .filter(".recordingRootNode");
@@ -347,11 +349,11 @@
         eventList: recordingStepList,
       };
 
-      $.ajax({
-        type: "POST",
-        url: "/RecordController/StopRecording",
-        data: { jsonText: JSON.stringify(jsonText) },
-      });
+      // $.ajax({
+      //   type: "POST",
+      //   url: "/RecordController/StopRecording",
+      //   data: { jsonText: JSON.stringify(jsonText) },
+      // });
     }
 
     if ($("#playButton").is(".recordPlayButtonSelected")) {
@@ -360,13 +362,13 @@
   };
 
   var _deleteClick = function (event) {
-    $.ajax({
-      type: "POST",
-      url: "/RecordController/DeleteRecordings",
-      success: function (response) {
-        var x = true;
-      }, //                dataType: 'json'
-    });
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/RecordController/DeleteRecordings",
+    //   success: function (response) {
+    //     var x = true;
+    //   }, //                dataType: 'json'
+    // });
   };
 
   var tackItOn = function (destination, source, fields) {

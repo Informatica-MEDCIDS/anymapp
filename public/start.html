@@ -274,17 +274,17 @@
       $(document).ready(content_start_loading);
     </script>
     <script type="text/javascript">
-      (function() {
-          if ($axure && $axure.loadDocument) {
-              window.parent.postMessage("isAxurePrototype", "*");
-              var origLoadDocument = $axure.loadDocument;
-              $axure.loadDocument = function(doc) {
-                  doc.configuration.prototypeId = '3SIG3P';
-                  doc.configuration.projectName = 'Conteudos educacionais web';
-                  origLoadDocument(doc);
-              };
-          }
+      (function () {
+        if ($axure && $axure.loadDocument) {
+          window.parent.postMessage("isAxurePrototype", "*");
+          var origLoadDocument = $axure.loadDocument;
+          $axure.loadDocument = function (doc) {
+            doc.configuration.prototypeId = "3SIG3P";
+            doc.configuration.projectName = "Conteudos educacionais web";
+            origLoadDocument(doc);
+          };
+        }
       })();
-  </script>
+    </script>
   </body>
 </html>
