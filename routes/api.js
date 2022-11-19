@@ -9,8 +9,8 @@ const api = express.Router();
 var log = require("debug")("express:api");
 var bunyan = require("bunyan");
 
-var logger = anymapp.createLogger({
-  name: "anylog",
+var logger = bunyan.createLogger({
+  name: "anymapp",
   serializers: { data: reqSerializer },
   streams: [
     {
@@ -82,8 +82,7 @@ api.use((req, res, next) => {
 
 api.post("/", function (req, res, next) {
   datalog.info({ event: req.body }, "logEvent");
-  res.send({ response: "ok" });
-  res.end();
+  res.send({ response: "ok" }).end();
   // var key = req.query["api-key"];
 
   // req.logger.info({msg: "me"});
@@ -149,7 +148,7 @@ api.get("/user/:name/repos", function (req, res, next) {
 // it will be passed through the defined middleware
 // in order, but ONLY those with an arity of 4, ignoring
 // regular middleware.
-api.use(function (err, req, res, next) {
+api.use((err, req, res, next) => {
   // whatever you want here, feel free to populate
   // properties on `err` to treat it differently in here.
   res.status(err.status || 500);

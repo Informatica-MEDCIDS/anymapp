@@ -1,5 +1,5 @@
-const createError = require("http-errors");
 const express = require("express");
+const createError = require("http-errors");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const compression = require("compression");
@@ -7,19 +7,25 @@ const session = require("express-session");
 const log = require("debug")("express:application");
 const http_logger = require("morgan");
 const helmet = require("helmet");
+const fs = require("fs");
 
 log("Starting Express...");
+
+const app = express();
+
+app.set("title", "AnyMapp");
+
+// dev
+app.enable("compileDebug");
+app.disable("view cache");
 
 // const indexRouter = require("./routes/index");
 // const usersRouter = require("./routes/users");
 const apiRouter = require("./routes/api");
 
-const app = express();
-
 // View engine
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
-
 // Loggers
 app.use(http_logger("dev"));
 
@@ -44,8 +50,21 @@ app.use(cookieParser());
 // Routes
 // app.use("/", indexRouter);
 // app.use("/users", usersRouter);
-app.use(express.static(path.join(__dirname, "public")));
+app.get("/", (req, res) => {
+  res.redirect("/start.html");
+});
+app.get(/^\/(?!resources).*\.html$/, (req, res) => {
+  // Strip the .html extension from the URL
+  let url = req.path.replace(/\.html$/, "");
+  // strip starting slash
+  url = url.replace(/^\//, "");
+
+  res.render(url, {
+    bundle: "/test.js",
+  });
+});
 app.use("/api", apiRouter);
+app.use(express.static(path.join(__dirname, "public")));
 
 // main escape routes
 // catch 404 and forward to error handler
