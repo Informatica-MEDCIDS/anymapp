@@ -13,13 +13,8 @@ index.get("/", (req, res) => {
   log("Redirecting root to start.html");
   res.redirect("/start.html#c=1");
 });
-index.get(/^((?!start\w*\.html|resources).)*\.html$/, (req, res) => {
+index.get(/^(((?!start\w*\.html|resources).)*)(\.html)$/, (req, res) => {
   log("Match mockup file.");
-  // Strip the .html extension from the URL
-  let url = req.path.replace(/\.html$/, "");
-  // strip starting slash
-  url = url.replace(/^\//, "");
-
   res.render("template", {
     title: "AnyMapp layer",
     bundle: "/anymapp.js",
