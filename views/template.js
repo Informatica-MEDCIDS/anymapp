@@ -1,8 +1,8 @@
 "use strict";
 
 // views/template
-import html from "html-express-js";
-import readFileSync from "fs";
+import { html } from "html-express-js";
+import { readFileSync } from "fs";
 import logFactory from "debug";
 
 const log = logFactory("express:view");

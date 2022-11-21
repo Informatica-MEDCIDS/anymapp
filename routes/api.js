@@ -48,11 +48,13 @@ var datalog = bunyan.createLogger({
 // use something similar to the content-negotiation
 // example.
 
-api.use((req, res, next) => {
-  log("Time: ", Date.now());
-  logger.info({ data: req });
-  next();
-});
+if (api.get("env") === "development") {
+  api.use((req, res, next) => {
+    log("Time: ", Date.now());
+    logger.info({ data: req });
+    next();
+  });
+}
 
 // here we validate the API key,
 // by mounting this middleware to /api

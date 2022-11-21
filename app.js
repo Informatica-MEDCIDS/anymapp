@@ -1,11 +1,11 @@
 "use strict";
 
 import express from "express";
-import createError from "http-errors";
 import path from "path";
 import cookieParser from "cookie-parser";
 import compression from "compression";
 import session from "express-session";
+import favicon from "serve-favicon";
 import logFactory from "debug";
 import http_logger from "morgan";
 import helmet from "helmet";
@@ -16,8 +16,8 @@ const log = logFactory("express:application");
 log("Starting Express...");
 
 const app = express();
-
 const dirname__ = "/" + path.dirname(import.meta.url.substring(8));
+app.use(favicon(path.join(dirname__, "public", "favicon.ico")));
 
 app.set("title", "AnyMapp");
 

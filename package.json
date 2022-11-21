@@ -44,7 +44,8 @@
     "http-errors": ">=2.0.0",
     "jstransformer-markdown-it": "^3.0.0",
     "morgan": ">=1.10.0",
-    "pug": ">=3.0.2"
+    "pug": ">=3.0.2",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "eslint-config-prettier": ">=8.5.0",
