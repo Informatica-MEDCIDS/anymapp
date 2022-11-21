@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Anonymous Digital Twin Human-App Interactions",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "node ./bin/www",
-    "debug": "node --trace-sync-io --inspect=0.0.0.0:9229 ./bin/www"
+    "start": "node ./bin/www.js",
+    "debug": "node --trace-sync-io --inspect=0.0.0.0:9229 ./bin/www.js"
   },
   "nodemonConfig": {
     "ignore": [
@@ -32,12 +33,14 @@
   "homepage": "https://github.com/Informatica-MEDCIDS/anymapp#readme",
   "dependencies": {
     "bunyan": "^1.8.15",
+    "cjs-to-es6": "^2.0.1",
     "compression": "^1.7.4",
     "cookie-parser": ">=1.4.6",
     "debug": ">=4.3.4",
     "express": ">=4.18.2",
     "express-session": "^1.17.3",
     "helmet": "^6.0.0",
+    "html-express-js": "^1.1.1",
     "http-errors": ">=2.0.0",
     "jstransformer-markdown-it": "^3.0.0",
     "morgan": ">=1.10.0",

@@ -1,9 +1,32 @@
-const express = require("express");
-const router = express.Router();
+"use strict";
 
-/* GET home page. */
-router.get("/", function (req, res) {
-  res.render("indexpu", { title: "Expresss" });
+import express from "express";
+import logFactory from "debug";
+
+const log = logFactory("express:index");
+
+log("Initializing Index...");
+
+const index = express.Router();
+
+index.get("/", (req, res) => {
+  log("Redirecting root to start.html");
+  res.redirect("/start.html#c=1");
+});
+index.get(/^((?!start\w*\.html|resources).)*\.html$/, (req, res) => {
+  log("Match mockup file.");
+  // Strip the .html extension from the URL
+  let url = req.path.replace(/\.html$/, "");
+  // strip starting slash
+  url = url.replace(/^\//, "");
+
+  res.render("template", {
+    title: "AnyMapp layer",
+    bundle: "/anymapp.js",
+    body: req.path,
+  });
 });
 
-module.exports = router;
+log("Initializing Index... done");
+
+export default index;

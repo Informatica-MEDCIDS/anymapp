@@ -17,7 +17,7 @@ lint:
     - git-diff-check
     - markdownlint@0.32.2
     - actionlint@1.6.22
-    - gitleaks@8.15.0
+    - gitleaks@8.15.1
     - clang-format@14.0.0
     - prettier@2.7.1
   ignore:

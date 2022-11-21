@@ -1,33 +1,45 @@
-const express = require("express");
-const createError = require("http-errors");
-const path = require("path");
-const cookieParser = require("cookie-parser");
-const compression = require("compression");
-const session = require("express-session");
-const log = require("debug")("express:application");
-const http_logger = require("morgan");
-const helmet = require("helmet");
-const fs = require("fs");
+"use strict";
+
+import express from "express";
+import createError from "http-errors";
+import path from "path";
+import cookieParser from "cookie-parser";
+import compression from "compression";
+import session from "express-session";
+import logFactory from "debug";
+import http_logger from "morgan";
+import helmet from "helmet";
+import htmlExpress from "html-express-js";
+
+const log = logFactory("express:application");
 
 log("Starting Express...");
 
 const app = express();
 
+const dirname__ = "/" + path.dirname(import.meta.url.substring(8));
+
 app.set("title", "AnyMapp");
 
 // dev
-app.enable("compileDebug");
-app.disable("view cache");
+if (app.get("env") === "development") {
+  app.enable("compileDebug");
+  app.disable("view cache");
+  app.use(http_logger("dev"));
+}
 
-// const indexRouter = require("./routes/index");
-// const usersRouter = require("./routes/users");
-const apiRouter = require("./routes/api");
+import indexRouter from "./routes/index.js";
+import apiRouter from "./routes/api.js";
 
 // View engine
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
-// Loggers
-app.use(http_logger("dev"));
+app.engine(
+  "js",
+  htmlExpress({
+    includesDir: "includes", // where all includes reside
+  })
+);
+app.set("views", path.join(dirname__, "views"));
+app.set("view engine", "js");
 
 // Performance
 app.use(compression());
@@ -48,41 +60,27 @@ app.use(
 app.use(cookieParser());
 
 // Routes
-// app.use("/", indexRouter);
-// app.use("/users", usersRouter);
-app.get("/", (req, res) => {
-  res.redirect("/start.html");
-});
-app.get(/^\/(?!resources).*\.html$/, (req, res) => {
-  // Strip the .html extension from the URL
-  let url = req.path.replace(/\.html$/, "");
-  // strip starting slash
-  url = url.replace(/^\//, "");
-
-  res.render(url, {
-    bundle: "/test.js",
-  });
-});
+app.use("/", indexRouter);
 app.use("/api", apiRouter);
-app.use(express.static(path.join(__dirname, "public")));
-
-// main escape routes
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  next(createError(404));
-});
+app.use(express.static(path.join(dirname__, "public")));
 
 // error handler
-app.use((err, req, res) => {
-  // set locals, only providing error in development
+app.use((err, req, res, next) => {
+  // whatever you want here, feel free to populate
+  // properties on `err` to treat it differently in here.
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  res.render("error");
+  res.send({ error: err.message }).end();
+});
+
+app.use((req, res) => {
+  res.status(404);
+  res.send({ error: "Sorry, can't find that" }).end();
 });
 
 log("Starting Express... done");
 
-module.exports = app;
+export default app;
