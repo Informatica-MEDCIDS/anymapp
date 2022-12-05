@@ -6,7 +6,11 @@
   "type": "module",
   "scripts": {
     "start": "node ./bin/www.js",
-    "debug": "node --trace-sync-io --inspect=0.0.0.0:9229 ./bin/www.js"
+    "debug": "node --trace-sync-io --inspect=0.0.0.0:9229 ./bin/www.js",
+    "db:install": "mkdir -p grafana && cd grafana && curl -sL https://github.com/grafana/loki/releases/download/v2.7.0/loki-linux-amd64.zip | busybox unzip - && npm run db:promtail",
+    "db:promtail": "cd grafana && curl -sL https://github.com/grafana/loki/releases/download/v2.7.0/promtail-linux-amd64.zip | busybox unzip - && npm run db:ls",
+    "db:config": "curl -sL -o grafana/loki.yaml https://raw.githubusercontent.com/grafana/loki/v2.7.0/cmd/loki/loki-local-config.yaml && npm run db:config2",
+    "db:config2": "mkdir -p grafana/config && curl -sL -o grafana/config/config.yaml https://raw.githubusercontent.com/grafana/loki/v2.7.0/clients/cmd/promtail/promtail-local-config.yaml"
   },
   "nodemonConfig": {
     "ignore": [
@@ -17,7 +21,9 @@
       "app.js",
       "routes",
       "public",
-      "views"
+      "views",
+      "bin/www.js",
+      "public/anymapp.js"
     ],
     "delay": 2500
   },
@@ -43,6 +49,7 @@
     "html-express-js": "^1.1.1",
     "http-errors": ">=2.0.0",
     "jstransformer-markdown-it": "^3.0.0",
+    "mongodb": "^4.12.0",
     "morgan": ">=1.10.0",
     "pug": ">=3.0.2",
     "serve-favicon": "^2.5.0"

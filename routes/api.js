@@ -7,8 +7,10 @@
 import express from "express";
 import logFactory from "debug";
 import bunyan from "bunyan";
+import { MongoClient } from "mongodb";
 
 const log = logFactory("express:api");
+// Enable command monitoring for debugging
 
 log("Initializing API...");
 
@@ -32,14 +34,14 @@ var logger = bunyan.createLogger({
     },
     {
       level: "error",
-      path: "anymapp-error.log", // log INFO and above to a file
+      path: "logs/anymapp-error.log", // log INFO and above to a file
     },
   ],
 });
 
 var datalog = bunyan.createLogger({
   name: "anymapp",
-  streams: [{ path: "anymapp-data.log" }], // log INFO and above to a file
+  streams: [{ path: "logs/anymapp-data.log" }], // log INFO and above to a file
 });
 
 // Loggers - end
@@ -99,8 +101,37 @@ function checkApiKey(req, res, next) {
 
 api.all("(.*)", checkApiKey);
 
+/// MongoDB
+// const client = new MongoClient(
+//   "mongodb://root:example@localhost:27017/anymapp",
+//   {
+//     monitorCommands: true,
+//   }
+// );
+
+// async function run(req) {
+//   try {
+//     client.connect();
+//     const database = client.db("anymapp");
+//     const haiku = database.collection("main");
+//     // create a document to insert
+//     const doc = {
+//       title: "Record of a Shriveled Datum",
+//       content: "No bytes, no problem. Just insert a document, in MongoDB",
+//     };
+//     const result = await haiku.insertOne(req.body);
+//     console.log(`A document was inserted with the _id: ${result.insertedId}`);
+//   } finally {
+//     await client.close();
+//   }
+// }
+/// MongoDB - end
+
 function storeMessage(req, res, next) {
   datalog.info({ event: req.body }, "logEvent");
+
+  // run(req).catch(console.dir);/// MongoDB
+
   res.send({ response: "ok" }).end();
 }
 

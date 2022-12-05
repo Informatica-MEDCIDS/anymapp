@@ -17,14 +17,22 @@ lint:
     - git-diff-check
     - markdownlint@0.32.2
     - actionlint@1.6.22
-    - gitleaks@8.15.1
+    - gitleaks@8.15.2
     - clang-format@14.0.0
-    - prettier@2.7.1
+    - prettier@2.8.0
   ignore:
     - linters: [ALL]
       paths:
         - .trunk/**
-        - public/**
+        - dev/**
+        - grafana/grafana-9.2.6/**
+        - public/data/**
+        - public/images/**
+        - public/files/**
+        - public/plugins/**
+        - public/resources/**
+        - public/*.html
+        - public/*.ico
 runtimes:
   enabled:
     - python@3.10.3
