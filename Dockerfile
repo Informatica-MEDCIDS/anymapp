@@ -18,7 +18,7 @@ RUN npm install --production
 # Copy local code to the container image.
 COPY . ./
 
-RUN mkdir -p /usr/src/app/logs
+# RUN mkdir -p /usr/src/app/logs
 
 # Run the web service on container startup.
 CMD ["node", "./bin/www.js"]

@@ -6,11 +6,11 @@
   "type": "module",
   "scripts": {
     "start": "node ./bin/www.js",
-    "debug": "node --trace-sync-io --inspect=0.0.0.0:9229 ./bin/www.js",
-    "db:install": "mkdir -p grafana && cd grafana && curl -sL https://github.com/grafana/loki/releases/download/v2.7.0/loki-linux-amd64.zip | busybox unzip - && npm run db:promtail",
-    "db:promtail": "cd grafana && curl -sL https://github.com/grafana/loki/releases/download/v2.7.0/promtail-linux-amd64.zip | busybox unzip - && npm run db:ls",
-    "db:config": "curl -sL -o grafana/loki.yaml https://raw.githubusercontent.com/grafana/loki/v2.7.0/cmd/loki/loki-local-config.yaml && npm run db:config2",
-    "db:config2": "mkdir -p grafana/config && curl -sL -o grafana/config/config.yaml https://raw.githubusercontent.com/grafana/loki/v2.7.0/clients/cmd/promtail/promtail-local-config.yaml"
+    "debug": "concurrently \"nodemon --inspect=0.0.0.0:9229 ./bin/www.js\" \"webpack --watch\"",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch"
   },
   "nodemonConfig": {
     "ignore": [
@@ -43,7 +43,7 @@
     "compression": "^1.7.4",
     "cookie-parser": ">=1.4.6",
     "debug": ">=4.3.4",
-    "express": "^5.0.0-beta.1",
+    "express": "^4.18.2",
     "express-session": "^1.17.3",
     "helmet": "^6.0.0",
     "html-express-js": "^1.1.1",
@@ -55,7 +55,16 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "@webpack-cli/generators": "^3.0.1",
+    "babel-loader": "^8.3.0",
+    "concurrently": "^7.6.0",
     "eslint-config-prettier": ">=8.5.0",
-    "nodemon": ">=2.0.20"
+    "javascript-obfuscator": "^4.0.0",
+    "nodemon": ">=2.0.20",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-obfuscator": "^3.5.1"
   }
 }

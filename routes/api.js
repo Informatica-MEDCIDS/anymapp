@@ -34,14 +34,14 @@ var logger = bunyan.createLogger({
     },
     {
       level: "error",
-      path: "logs/anymapp-error.log", // log INFO and above to a file
+      path: "/var/log/anymapp-error.log", // log INFO and above to a file
     },
   ],
 });
 
 var datalog = bunyan.createLogger({
   name: "anymapp",
-  streams: [{ path: "logs/anymapp-data.log" }], // log INFO and above to a file
+  streams: [{ path: "/var/log/anymapp-data.log" }], // log INFO and above to a file
 });
 
 // Loggers - end
