@@ -3,7 +3,7 @@
   background-image:none;
   position:static;
   left:auto;
-  width:360px;
+  width:390px;
   margin-left:0;
   margin-right:0;
   text-align:left;
@@ -16,21 +16,13 @@
   position:absolute;
   z-index:0;
 }
-#u100 {
+#u108_div {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:0px;
-  height:0px;
-}
-#u101_div {
-  border-width:0px;
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:360px;
-  height:800px;
+  width:390px;
+  height:844px;
   background:inherit;
   background-color:rgba(243, 243, 243, 1);
   border:none;
@@ -40,30 +32,30 @@
   box-shadow:none;
   color:#F3F3F3;
 }
-#u101 {
+#u108 {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:360px;
-  height:800px;
+  width:390px;
+  height:844px;
   display:flex;
   color:#F3F3F3;
 }
-#u101 .text {
+#u108 .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u101_text {
+#u108_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
   visibility:hidden;
 }
-#u102_div {
+#u109_div {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -80,30 +72,30 @@
   font-family:"Nunito Bold", "Nunito", sans-serif;
   font-style:normal;
 }
-#u102 {
+#u109 {
   border-width:0px;
   position:absolute;
-  left:50px;
-  top:168px;
+  left:66px;
+  top:116px;
   width:260px;
   height:341px;
   display:flex;
   font-family:"Nunito Bold", "Nunito", sans-serif;
   font-style:normal;
 }
-#u102 .text {
+#u109 .text {
   position:absolute;
   align-self:flex-start;
   padding:0px 0px 0px 0px;
   box-sizing:border-box;
   width:100%;
 }
-#u102_text {
+#u109_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
 }
-#u103_img {
+#u110_img {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -111,23 +103,23 @@
   width:44px;
   height:44px;
 }
-#u103 {
+#u110 {
   border-width:0px;
   position:absolute;
-  left:158px;
-  top:585px;
+  left:172px;
+  top:509px;
   width:44px;
   height:44px;
   display:flex;
 }
-#u103 .text {
+#u110 .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u103_text {
+#u110_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
