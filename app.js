@@ -10,6 +10,9 @@ import logFactory from "debug";
 import http_logger from "morgan";
 import helmet from "helmet";
 import htmlExpress from "html-express-js";
+import FileStore from "session-file-store";
+
+var fileStore = FileStore(session);
 
 const log = logFactory("express:application");
 
@@ -46,15 +49,19 @@ app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+var fileStoreOptions = {};
+
 // Security
 // app.use(helmet());
 app.set("trust proxy", 1); // trust first proxy
 app.use(
   session({
+    cookie: { httpOnly: false, sameSite: true },
     resave: false,
     saveUninitialized: true,
     secret: "sa3Cur3",
-    name: "sessionId",
+    name: "anymapp",
+    store: new fileStore(fileStoreOptions),
   })
 );
 app.use(cookieParser());

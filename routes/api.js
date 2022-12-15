@@ -128,14 +128,24 @@ api.all("(.*)", checkApiKey);
 /// MongoDB - end
 
 function storeMessage(req, res, next) {
-  datalog.info({ event: req.body }, "logEvent");
+  datalog.info({ session: req.session.id, event: req.body }, "logEvent");
 
   // run(req).catch(console.dir);/// MongoDB
 
   res.send({ response: "ok" }).end();
 }
 
+function endSession(req, res, next) {
+  req.session.destroy(function (err) {
+    log("destroy session ", err);
+  });
+
+  res.send({ response: "ok" }).end();
+}
+
 api.put("/v1", storeMessage);
+
+api.put("/v1/logout", endSession);
 
 // create an error with .status. we
 // can then use the property in our
