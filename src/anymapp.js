@@ -36,12 +36,12 @@
 
 console.log("anymapp.js loaded");
 
-window.onbeforeunload = function () {
-  $.ajax({
-    type: "PUT",
-    url: "/api/v1/logout?api-key=foo",
-    data: {},
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-  });
-};
+// window.onbeforeunload = function () {
+//   $.ajax({
+//     type: "PUT",
+//     url: "/api/v1/logout?api-key=foo",
+//     data: {},
+//     contentType: "application/json; charset=utf-8",
+//     dataType: "json",
+//   });
+// };
