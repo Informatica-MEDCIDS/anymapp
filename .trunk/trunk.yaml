@@ -25,14 +25,8 @@ lint:
       paths:
         - .trunk/**
         - dev/**
-        - grafana/grafana-9.2.6/**
-        - public/data/**
-        - public/images/**
-        - public/files/**
-        - public/plugins/**
-        - public/resources/**
-        - public/*.html
-        - public/*.ico
+        - grafana/**
+        - public/**
 runtimes:
   enabled:
     - python@3.10.3

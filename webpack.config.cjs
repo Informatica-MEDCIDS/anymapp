@@ -3,25 +3,27 @@
 const path = require("path");
 var WebpackObfuscator = require("webpack-obfuscator");
 
-const isProduction = process.env.NODE_ENV == "production";
+const isDevelopment = process.env.NODE_ENV == "development";
 
-const config = {
+module.exports = {
   entry: "./src/anymapp.js",
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "anymapp.js",
   },
+  devtool: isDevelopment ? "inline-source-map" : false,
+  mode: isDevelopment ? "development" : "production",
   plugins: [
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
-    new WebpackObfuscator(
+    !isDevelopment && new WebpackObfuscator(
       {
         stringArrayRotate: true,
         optionsPreset: "high-obfuscation",
       },
       ["excluded_bundle_name.js"]
     ),
-  ],
+  ].filter(Boolean),
   module: {
     rules: [
       {
@@ -41,13 +43,4 @@ const config = {
   //   minimize: true,
   //   mangleExports: "size",
   // }
-};
-
-module.exports = () => {
-  if (isProduction) {
-    config.mode = "production";
-  } else {
-    config.mode = "development";
-  }
-  return config;
 };

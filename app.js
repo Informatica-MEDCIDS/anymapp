@@ -56,9 +56,9 @@ var fileStoreOptions = {};
 app.set("trust proxy", 1); // trust first proxy
 app.use(
   session({
-    cookie: { httpOnly: false, sameSite: true },
-    resave: false,
-    saveUninitialized: true,
+    cookie: { httpOnly: true, sameSite: "strict" },
+    resave: true,
+    saveUninitialized: false,
     secret: "sa3Cur3",
     name: "anymapp",
     store: new fileStore(fileStoreOptions),

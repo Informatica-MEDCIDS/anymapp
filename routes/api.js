@@ -128,7 +128,13 @@ api.all("(.*)", checkApiKey);
 /// MongoDB - end
 
 function storeMessage(req, res, next) {
-  datalog.info({ session: req.session.id, event: req.body }, "logEvent");
+  if (req.session) {
+    log("Session ID:", req.sessionID);
+    datalog.info({ session: req.session.id, event: req.body }, "logEvent");
+  } else {
+    log("Session ID: not defined");
+    datalog.info({ session: "no-cookie-for-you", event: req.body }, "logEvent");
+  }
 
   // run(req).catch(console.dir);/// MongoDB
 

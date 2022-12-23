@@ -4,8 +4,6 @@
 (function () {
   $axure.messageCenter.addMessageListener(function (message, data) {
     if (message == "logEvent") {
-      //// recordplay.js:149
-      // Franz TODO: first event catch
       var newdata = {
         elementID: data.elementID,
         eventInfo: {
@@ -16,6 +14,7 @@
           pageX: data.eventInfo.pageX,
           pageY: data.eventInfo.pageY,
           srcElement: data.eventInfo.srcElement,
+          name: data.eventInfo.thiswidget.name,
           window: data.eventInfo.window,
         },
         eventType: data.eventType,
@@ -34,7 +33,7 @@
   });
 })();
 
-console.log("anymapp.js loaded");
+console.log("anymapp.js loadead");
 
 // window.onbeforeunload = function () {
 //   $.ajax({
