@@ -17,6 +17,7 @@
           name: data.eventInfo.thiswidget.name,
           window: data.eventInfo.window,
         },
+        pageTitle: document.querySelector("body > title").textContent,
         eventType: data.eventType,
         path: data.path,
         timeStamp: data.timeStamp,
@@ -29,6 +30,7 @@
         dataType: "json",
       });
       console.log(message, data);
+      console.log(message, newdata);
     }
   });
 })();
