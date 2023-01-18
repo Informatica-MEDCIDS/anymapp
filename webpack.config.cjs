@@ -16,14 +16,14 @@ module.exports = {
   plugins: [
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
-    !isDevelopment && new WebpackObfuscator(
+    new WebpackObfuscator(
       {
-        stringArrayRotate: true,
+        rotateStringArray: true,
         optionsPreset: "high-obfuscation",
       },
       ["excluded_bundle_name.js"]
     ),
-  ].filter(Boolean),
+  ],
   module: {
     rules: [
       {
