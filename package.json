@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node ./bin/www.js",
-    "debug": "concurrently \"nodemon --inspect=0.0.0.0:9229 ./bin/www.js\" \"webpack --mode=development --node-env=development -watch\"",
+    "debug": "concurrently \"nodemon --inspect=0.0.0.0:9229 ./bin/www.js\" \"webpack --mode=development --node-env=development --watch\"",
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development --node-env=development",
     "build:prod": "webpack --mode=production --node-env=production",
