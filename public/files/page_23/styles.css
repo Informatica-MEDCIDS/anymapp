@@ -376,13 +376,8 @@
   position:absolute;
   left:0px;
   top:0px;
-<<<<<<< HEAD
-  width:90px;
-  height:32px;
-=======
   width:210px;
   height:60px;
->>>>>>> 2e94312 (asd)
   background:inherit;
   background-color:rgba(214, 176, 200, 1);
   border:none;
@@ -393,37 +388,22 @@
   font-family:"Nunito Bold", "Nunito", sans-serif;
   font-weight:700;
   font-style:normal;
-<<<<<<< HEAD
-  font-size:14px;
-=======
   font-size:16px;
   line-height:22px;
->>>>>>> 2e94312 (asd)
 }
 #u221 {
   border-width:0px;
   position:absolute;
-<<<<<<< HEAD
-  left:151px;
-  top:632px;
-  width:90px;
-  height:32px;
-=======
   left:90px;
   top:652px;
   width:210px;
   height:60px;
->>>>>>> 2e94312 (asd)
   display:flex;
   font-family:"Nunito Bold", "Nunito", sans-serif;
   font-weight:700;
   font-style:normal;
-<<<<<<< HEAD
-  font-size:14px;
-=======
   font-size:16px;
   line-height:22px;
->>>>>>> 2e94312 (asd)
 }
 #u221 .text {
   position:absolute;
