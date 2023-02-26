@@ -159,7 +159,7 @@
   width:139px;
   height:36px;
   background:inherit;
-  background-color:rgba(248, 248, 248, 1);
+  background-color:rgba(152, 22, 84, 1);
   border:none;
   border-radius:5px;
   -moz-box-shadow:none;
@@ -169,7 +169,6 @@
   font-weight:700;
   font-style:normal;
   font-size:14px;
-  color:#D6B0C8;
 }
 #u115 {
   border-width:0px;
@@ -183,7 +182,6 @@
   font-weight:700;
   font-style:normal;
   font-size:14px;
-  color:#D6B0C8;
 }
 #u115 .text {
   position:absolute;

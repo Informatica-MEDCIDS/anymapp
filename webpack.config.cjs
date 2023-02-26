@@ -1,9 +1,14 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require("path");
+const webpack = require("webpack"); //to access built-in plugins
 var WebpackObfuscator = require("webpack-obfuscator");
 
 const isDevelopment = process.env.NODE_ENV == "development";
+const handler = (percentage, message, ...args) => {
+  // e.g. Output each progress message directly to the console:
+  console.info(percentage, message, ...args);
+};
 
 module.exports = {
   entry: "./src/anymapp.js",
@@ -16,14 +21,16 @@ module.exports = {
   plugins: [
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
-    new WebpackObfuscator(
-      {
-        rotateStringArray: true,
-        optionsPreset: "high-obfuscation",
-      },
-      ["excluded_bundle_name.js"]
-    ),
-  ],
+    !isDevelopment &&
+      new WebpackObfuscator(
+        {
+          rotateStringArray: true,
+          optionsPreset: "high-obfuscation",
+        },
+        ["excluded_bundle_name.js"]
+      ),
+    new webpack.ProgressPlugin(handler),
+  ].filter(Boolean),
   module: {
     rules: [
       {
