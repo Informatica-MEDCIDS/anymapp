@@ -15,6 +15,8 @@
           pageY: data.eventInfo.pageY,
           srcElement: data.eventInfo.srcElement,
           name: data.eventInfo.thiswidget.name,
+          value: document.querySelector("#" + data.elementID).lastElementChild
+            .value,
           window: data.eventInfo.window,
         },
         pageTitle: document.querySelector("body > title").textContent,
@@ -31,11 +33,14 @@
       });
       console.log(message, data);
       console.log(message, newdata);
+      // eventInfo.thiswidget.elementQuery[0].ownerDocument.activeElement.value
+      // eventInfo.thiswidget.elementQuery[0].lastElementChild.value
+      // #u47 document.querySelector("#u47").lastElementChild.value
     }
   });
 })();
 
-console.log("anymapp.js loadead");
+console.log("anymapp.js loaded");
 
 // window.onbeforeunload = function () {
 //   $.ajax({
