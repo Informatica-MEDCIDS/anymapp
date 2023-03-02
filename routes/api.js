@@ -7,6 +7,7 @@
 import express from "express";
 import logFactory from "debug";
 import bunyan from "bunyan";
+import browser from "detect-browser";
 import { MongoClient } from "mongodb";
 
 const log = logFactory("express:api");
@@ -129,8 +130,12 @@ api.all("(.*)", checkApiKey);
 
 function storeMessage(req, res, next) {
   if (req.session) {
+    var userAgent = browser.parseUserAgent(req.headers["user-agent"]);
     log("Session ID:", req.sessionID);
-    datalog.info({ session: req.session.id, event: req.body }, "logEvent");
+    datalog.info(
+      { session: req.session.id, userAgent: userAgent, event: req.body },
+      "logEvent"
+    );
   } else {
     log("Session ID: not defined");
     datalog.info({ session: "no-cookie-for-you", event: req.body }, "logEvent");

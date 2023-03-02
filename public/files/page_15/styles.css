@@ -82,7 +82,7 @@
   border-width:0px;
   position:absolute;
   left:66px;
-  top:141px;
+  top:188px;
   width:260px;
   height:72px;
   display:flex;
@@ -112,8 +112,8 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:279px;
-  height:30px;
+  width:260px;
+  height:75px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -126,20 +126,26 @@
   font-style:normal;
   font-size:22px;
   color:#F3F3F3;
+  text-align:justify;
+  text-justify:inter-word;
+  line-height:25px;
 }
 #u120 {
   border-width:0px;
   position:absolute;
   left:66px;
   top:62px;
-  width:279px;
-  height:30px;
+  width:260px;
+  height:75px;
   display:flex;
   font-family:"Nunito Bold", "Nunito", sans-serif;
   font-weight:700;
   font-style:normal;
   font-size:22px;
   color:#F3F3F3;
+  text-align:justify;
+  text-justify:inter-word;
+  line-height:25px;
 }
 #u120 .text {
   position:absolute;
@@ -150,7 +156,7 @@
 }
 #u120_text {
   border-width:0px;
-  white-space:nowrap;
+  word-wrap:break-word;
   text-transform:none;
 }
 #u121_div {
@@ -180,7 +186,7 @@
   border-width:0px;
   position:absolute;
   left:66px;
-  top:361px;
+  top:408px;
   width:260px;
   height:72px;
   display:flex;
@@ -225,7 +231,7 @@
   border-width:0px;
   position:absolute;
   left:251px;
-  top:247px;
+  top:294px;
   width:60px;
   height:60px;
   display:flex;
@@ -259,7 +265,7 @@
   border-width:0px;
   position:absolute;
   left:79px;
-  top:247px;
+  top:294px;
   width:60px;
   height:60px;
   display:flex;
@@ -293,7 +299,7 @@
   border-width:0px;
   position:absolute;
   left:163px;
-  top:247px;
+  top:294px;
   width:60px;
   height:60px;
   display:flex;
@@ -335,7 +341,7 @@
   border-width:0px;
   position:absolute;
   left:249px;
-  top:467px;
+  top:514px;
   width:60px;
   height:60px;
   display:flex;
@@ -369,7 +375,7 @@
   border-width:0px;
   position:absolute;
   left:77px;
-  top:467px;
+  top:514px;
   width:60px;
   height:60px;
   display:flex;
@@ -403,7 +409,7 @@
   border-width:0px;
   position:absolute;
   left:161px;
-  top:467px;
+  top:514px;
   width:60px;
   height:60px;
   display:flex;
@@ -437,7 +443,7 @@
   border-width:0px;
   position:absolute;
   left:173px;
-  top:608px;
+  top:655px;
   width:44px;
   height:44px;
   display:flex;
@@ -480,7 +486,7 @@
   border-width:0px;
   position:absolute;
   left:66px;
-  top:568px;
+  top:615px;
   width:260px;
   height:18px;
   display:flex;
