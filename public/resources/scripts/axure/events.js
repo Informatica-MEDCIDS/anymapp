@@ -4,33 +4,34 @@ $axure.internal(function ($ax) {
   var _features = ($ax.features = {});
   var _supports = (_features.supports = {});
 
+  // Franz lines below changed to allow capture onlostfocus, because syntheic events are overriding the native events
   // Got this from http://stackoverflow.com/questions/11381673/javascript-solution-to-detect-mobile-browser
-  let isMobile =
-    navigator.userAgent.match(/Android/i) ||
-    navigator.userAgent.match(/webOS/i) ||
-    navigator.userAgent.match(/iPhone/i) ||
-    navigator.userAgent.match(/iPad/i) ||
-    navigator.userAgent.match(/iPod/i) ||
-    navigator.userAgent.match(/BlackBerry/i) ||
-    navigator.userAgent.match(/Tablet PC/i) ||
-    navigator.userAgent.match(/Windows Phone/i);
+  let isMobile = false;
+    // navigator.userAgent.match(/Android/i) ||
+    // navigator.userAgent.match(/webOS/i) ||
+    // navigator.userAgent.match(/iPhone/i) ||
+    // navigator.userAgent.match(/iPad/i) ||
+    // navigator.userAgent.match(/iPod/i) ||
+    // navigator.userAgent.match(/BlackBerry/i) ||
+    // navigator.userAgent.match(/Tablet PC/i) ||
+    // navigator.userAgent.match(/Windows Phone/i);
 
-  if (isMobile || navigator.maxTouchPoints || navigator.msMaxTouchPoints) {
-    _supports.touchstart = typeof window.ontouchstart !== "undefined";
-    _supports.touchmove = typeof window.ontouchmove !== "undefined";
-    _supports.touchend = typeof window.ontouchend !== "undefined";
+  // if (isMobile || navigator.maxTouchPoints || navigator.msMaxTouchPoints) {
+  //   _supports.touchstart = typeof window.ontouchstart !== "undefined";
+  //   _supports.touchmove = typeof window.ontouchmove !== "undefined";
+  //   _supports.touchend = typeof window.ontouchend !== "undefined";
 
-    _supports.pointerdown = typeof window.onpointerdown !== "undefined";
-    _supports.pointerup = typeof window.onpointerup !== "undefined";
-    _supports.pointermove = typeof window.onpointermove !== "undefined";
-  }
+  //   _supports.pointerdown = typeof window.onpointerdown !== "undefined";
+  //   _supports.pointerup = typeof window.onpointerup !== "undefined";
+  //   _supports.pointermove = typeof window.onpointermove !== "undefined";
+  // }
 
-  _supports.mobile =
-    _supports.touchstart && _supports.touchend && _supports.touchmove;
+  _supports.mobile = false;
+    // _supports.touchstart && _supports.touchend && _supports.touchmove;
   // || _supports.pointerdown && _supports.pointerup && _supports.pointermove;
-  _supports.windowsMobile =
-    navigator.userAgent.match(/Tablet PC/i) ||
-    navigator.userAgent.match(/Windows Phone/i);
+  _supports.windowsMobile = false;
+    // navigator.userAgent.match(/Tablet PC/i) ||
+    // navigator.userAgent.match(/Windows Phone/i);
 
   var _eventNames = (_features.eventNames = {});
   _eventNames.mouseDownName = _supports.touchstart
