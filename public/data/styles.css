@@ -12,16 +12,19 @@
 }
 .box_1 {
 }
-.box_3 {
+.ellipse {
+}
+.shape {
 }
 .image {
-}
-.placeholder {
 }
 .button {
 }
 .primary_button {
   color:#FFFFFF;
+}
+.link_button {
+  color:#1E98D7;
 }
 .heading_1 {
   font-family:"Arial Normal", "Arial", sans-serif;
@@ -68,18 +71,10 @@
   font-size:13px;
   text-align:left;
 }
-.icon {
-}
 .paragraph {
   text-align:left;
 }
-.text_field {
-  color:#000000;
-  text-align:left;
-}
-.text_area {
-  color:#000000;
-  text-align:left;
+.line {
 }
 .droplist {
   color:#000000;
@@ -92,30 +87,24 @@
 .checkbox {
   text-align:left;
 }
-.radio_button {
-  text-align:left;
-}
 .flow_shape {
-}
-.primary_button1 {
-  color:#FFFFFF;
 }
 .form_hint {
   color:#999999;
 }
 .form_disabled {
 }
-.shape {
-}
-.box_2 {
-}
-.label1 {
-  font-size:14px;
+.radio_button {
   text-align:left;
 }
-.line {
+.icon {
 }
-.checkbox1 {
+.text_field {
+  color:#000000;
+  text-align:left;
+}
+.text_area {
+  color:#000000;
   text-align:left;
 }
 textarea, select, input, button { outline: none; }
