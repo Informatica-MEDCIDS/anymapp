@@ -10,6 +10,11 @@ const handler = (percentage, message, ...args) => {
   console.info(percentage, message, ...args);
 };
 
+//    "@babel/core": "7.20.12",
+  //  "@babel/preset-env": "7.20.2",
+  //  "eslint-config-prettier": ">=8.6.0",
+  // "javascript-obfuscator": ">=4.0.2",
+
 module.exports = {
   entry: "./src/anymapp.js",
   output: {
