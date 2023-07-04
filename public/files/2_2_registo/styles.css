@@ -16,6 +16,14 @@
   position:absolute;
   z-index:0;
 }
+#u89 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  height:0px;
+}
 #u90 {
   border-width:0px;
   position:absolute;
@@ -24,15 +32,7 @@
   width:0px;
   height:0px;
 }
-#u91 {
-  border-width:0px;
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:0px;
-  height:0px;
-}
-#u92_div {
+#u91_div {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -48,7 +48,7 @@
   box-shadow:none;
   color:#F3F3F3;
 }
-#u92 {
+#u91 {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -58,20 +58,20 @@
   display:flex;
   color:#F3F3F3;
 }
-#u92 .text {
+#u91 .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u92_text {
+#u91_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
   visibility:hidden;
 }
-#u93_div {
+#u92_div {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -88,7 +88,7 @@
   font-family:"Nunito Bold", "Nunito", sans-serif;
   font-style:normal;
 }
-#u93 {
+#u92 {
   border-width:0px;
   position:absolute;
   left:66px;
@@ -99,19 +99,19 @@
   font-family:"Nunito Bold", "Nunito", sans-serif;
   font-style:normal;
 }
-#u93 .text {
+#u92 .text {
   position:absolute;
   align-self:flex-start;
   padding:0px 0px 0px 0px;
   box-sizing:border-box;
   width:100%;
 }
-#u93_text {
+#u92_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
 }
-#u94_img {
+#u93_img {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -119,13 +119,43 @@
   width:44px;
   height:44px;
 }
-#u94 {
+#u93 {
   border-width:0px;
   position:absolute;
   left:173px;
   top:690px;
   width:44px;
   height:44px;
+  display:flex;
+}
+#u93 .text {
+  position:absolute;
+  align-self:center;
+  padding:2px 2px 2px 2px;
+  box-sizing:border-box;
+  width:100%;
+}
+#u93_text {
+  border-width:0px;
+  word-wrap:break-word;
+  text-transform:none;
+  visibility:hidden;
+}
+#u94_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:390px;
+  height:844px;
+}
+#u94 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:390px;
+  height:844px;
   display:flex;
 }
 #u94 .text {
@@ -146,17 +176,22 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:390px;
-  height:844px;
+  width:340px;
+  height:50px;
 }
 #u95 {
   border-width:0px;
   position:absolute;
-  left:0px;
-  top:0px;
-  width:390px;
-  height:844px;
+  left:24px;
+  top:535px;
+  width:340px;
+  height:50px;
   display:flex;
+  font-family:"Nunito Bold", "Nunito", sans-serif;
+  font-weight:700;
+  font-style:normal;
+  font-size:14px;
+  color:#FFFFFF;
 }
 #u95 .text {
   position:absolute;
@@ -169,7 +204,6 @@
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
-  visibility:hidden;
 }
 #u96_img {
   border-width:0px;
@@ -183,7 +217,7 @@
   border-width:0px;
   position:absolute;
   left:24px;
-  top:535px;
+  top:608px;
   width:340px;
   height:50px;
   display:flex;
@@ -210,22 +244,17 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:340px;
-  height:50px;
+  width:36px;
+  height:36px;
 }
 #u97 {
   border-width:0px;
   position:absolute;
-  left:24px;
-  top:608px;
-  width:340px;
-  height:50px;
+  left:341px;
+  top:11px;
+  width:36px;
+  height:36px;
   display:flex;
-  font-family:"Nunito Bold", "Nunito", sans-serif;
-  font-weight:700;
-  font-style:normal;
-  font-size:14px;
-  color:#FFFFFF;
 }
 #u97 .text {
   position:absolute;
@@ -238,6 +267,7 @@
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
+  visibility:hidden;
 }
 #u98_img {
   border-width:0px;
@@ -250,7 +280,7 @@
 #u98 {
   border-width:0px;
   position:absolute;
-  left:341px;
+  left:292px;
   top:11px;
   width:36px;
   height:36px;
@@ -264,36 +294,6 @@
   width:100%;
 }
 #u98_text {
-  border-width:0px;
-  word-wrap:break-word;
-  text-transform:none;
-  visibility:hidden;
-}
-#u99_img {
-  border-width:0px;
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:36px;
-  height:36px;
-}
-#u99 {
-  border-width:0px;
-  position:absolute;
-  left:292px;
-  top:11px;
-  width:36px;
-  height:36px;
-  display:flex;
-}
-#u99 .text {
-  position:absolute;
-  align-self:center;
-  padding:2px 2px 2px 2px;
-  box-sizing:border-box;
-  width:100%;
-}
-#u99_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
