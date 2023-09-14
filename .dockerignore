@@ -1,0 +1,12 @@
+.dockerignore
+node_modules
+dev
+grafana
+logs
+src
+.vscode
+.trunk
+.kpt-pipeline
+.docker
+.babelrc
+webpack.config.cjs

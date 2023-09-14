@@ -110,6 +110,8 @@ dist
 # Serverless directories
 .serverless/
 
+sessions/
+
 # FuseBox cache
 .fusebox/
 
@@ -128,3 +130,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.vscode*
+bin/*
+dev
+grafana
