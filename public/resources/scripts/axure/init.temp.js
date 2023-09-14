@@ -25,8 +25,8 @@
           fnPrefix[0] == "Z"
             ? "A".repeat(fnPrefix.length + 1)
             : String.fromCharCode(fnPrefix.charCodeAt(0) + 1).repeat(
-                fnPrefix.length
-              );
+              fnPrefix.length
+            );
     }
 
     function populateNotes(pageForNotes) {
@@ -120,7 +120,7 @@
         $axure.messageCenter.setState("page.data", pageData);
         window.focus();
       }
-    } catch (e) {}
+    } catch (e) { }
 
     //attach here for chrome local
     //$(window).on('load', function() {
@@ -335,38 +335,38 @@ var gv_hasCanvas = false;
     }
 
     with ((proto = CanvasRenderingContext2D.prototype))
-      for (var func in (abbrev = {
-        a: arc,
-        b: beginPath,
-        n: clearRect,
-        c: clip,
-        p: closePath,
-        g: createLinearGradient,
-        f: fill,
-        j: fillRect,
-        z: function (s) {
-          this.fillStyle = s;
-        },
-        l: lineTo,
-        w: function (w) {
-          this.lineWidth = w;
-        },
-        m: moveTo,
-        q: quadraticCurveTo,
-        h: rect,
-        r: restore,
-        o: rotate,
-        s: save,
-        x: scale,
-        y: function (s) {
-          this.strokeStyle = s;
-        },
-        u: setTransform,
-        k: stroke,
-        i: strokeRect,
-        t: translate,
-      }))
-        proto[func] = chain(abbrev[func]);
+    for (var func in (abbrev = {
+      a: arc,
+      b: beginPath,
+      n: clearRect,
+      c: clip,
+      p: closePath,
+      g: createLinearGradient,
+      f: fill,
+      j: fillRect,
+      z: function (s) {
+        this.fillStyle = s;
+      },
+      l: lineTo,
+      w: function (w) {
+        this.lineWidth = w;
+      },
+      m: moveTo,
+      q: quadraticCurveTo,
+      h: rect,
+      r: restore,
+      o: rotate,
+      s: save,
+      x: scale,
+      y: function (s) {
+        this.strokeStyle = s;
+      },
+      u: setTransform,
+      k: stroke,
+      i: strokeRect,
+      t: translate,
+    }))
+      proto[func] = chain(abbrev[func]);
     CanvasGradient.prototype.a = chain(CanvasGradient.prototype.addColorStop);
   }
 })();

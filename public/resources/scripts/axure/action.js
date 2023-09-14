@@ -189,8 +189,8 @@
         type == queueTypes.resize
           ? _addResize
           : type == queueTypes.rotate
-          ? _addRotate
-          : _addMove;
+            ? _addRotate
+            : _addMove;
       func(id, eventInfo, actionInfo, {
         easing: "none",
         duration: 0,
@@ -231,8 +231,8 @@
             otherType1 == queueTypes.resize
               ? _addResize
               : otherType1 == queueTypes.rotate
-              ? _addRotate
-              : _addMove;
+                ? _addRotate
+                : _addMove;
           func(id, eventInfo, actionInfo, {
             easing: "none",
             duration: 0,
@@ -255,8 +255,8 @@
             otherType2 == queueTypes.resize
               ? _addResize
               : otherType2 == queueTypes.rotate
-              ? _addRotate
-              : _addMove;
+                ? _addRotate
+                : _addMove;
           func(id, eventInfo, actionInfo, {
             easing: "none",
             duration: 0,
@@ -273,20 +273,20 @@
           type == queueTypes.resize
             ? actionInfo
             : otherType1 == queueTypes.resize
-            ? other1.actionInfo
-            : other2.actionInfo;
+              ? other1.actionInfo
+              : other2.actionInfo;
         var rotateInfo =
           type == queueTypes.rotate
             ? actionInfo
             : otherType1 == queueTypes.rotate
-            ? other1.actionInfo
-            : other2.actionInfo;
+              ? other1.actionInfo
+              : other2.actionInfo;
         var moveInfo =
           type == queueTypes.move
             ? actionInfo
             : otherType1 == queueTypes.move
-            ? other1.actionInfo
-            : other2.actionInfo;
+              ? other1.actionInfo
+              : other2.actionInfo;
         var options = {
           easing: moveInfo.options.easing,
           duration: Math.min(duration, otherDuration1, otherDuration2),
@@ -312,20 +312,20 @@
           type == queueTypes.resize
             ? stop
             : otherType1 == queueTypes.resize
-            ? otherStop1
-            : otherStop2;
+              ? otherStop1
+              : otherStop2;
         options.moveStop =
           type == queueTypes.move
             ? stop
             : otherType1 == queueTypes.move
-            ? otherStop1
-            : otherStop2;
+              ? otherStop1
+              : otherStop2;
         options.rotateStop =
           type == queueTypes.rotate
             ? stop
             : otherType1 == queueTypes.rotate
-            ? otherStop1
-            : otherStop2;
+              ? otherStop1
+              : otherStop2;
 
         _addResize(id, eventInfo, resizeInfo, options, moveInfo, rotateInfo);
 
@@ -376,8 +376,8 @@
       var eventInfo = moveInfo
         ? moveInfo.eventInfo
         : resizeInfo
-        ? resizeInfo.eventInfo
-        : rotateInfo.eventInfo;
+          ? resizeInfo.eventInfo
+          : rotateInfo.eventInfo;
       moveInfo = moveInfo && moveInfo.actionInfo;
       resizeInfo = resizeInfo && resizeInfo.actionInfo;
       rotateInfo = rotateInfo && rotateInfo.actionInfo;
@@ -1553,7 +1553,7 @@
             animations.push({
               id: id,
               type: queueTypes.move,
-              func: function () {},
+              func: function () { },
             });
         })(childId);
       }
@@ -1614,7 +1614,7 @@
       animations.push({
         id: elementId,
         type: queueTypes.move,
-        func: function () {},
+        func: function () { },
       });
 
       _addAnimations(animations);
@@ -1999,13 +1999,13 @@
             animations.push({
               id: childId,
               type: queueTypes.move,
-              func: function () {},
+              func: function () { },
             });
           if (!isLayer && rotateInfo)
             animations.push({
               id: childId,
               type: queueTypes.rotate,
-              func: function () {},
+              func: function () { },
             });
         })(childrenIds[idIndex]);
       }
@@ -2077,7 +2077,7 @@
             //_updateOffset(offset, rotateInfo.anchor, $axure.fn.getWidgetBoundingRect(elementId));
             rotateHandlesMove = Boolean(
               rotateInfo &&
-                (offset.x || offset.y || rotateInfo.anchor != "center")
+              (offset.x || offset.y || rotateInfo.anchor != "center")
             );
             $ax.event.raiseSyntheticEvent(elementId, "onRotate");
           }
@@ -2164,13 +2164,13 @@
         animations.push({
           id: elementId,
           type: queueTypes.rotate,
-          func: function () {},
+          func: function () { },
         });
       if (moves)
         animations.push({
           id: elementId,
           type: queueTypes.move,
-          func: function () {},
+          func: function () { },
         });
     }
 
@@ -2427,7 +2427,7 @@
       if (resizable)
         topDelta =
           (childCenterPoint.y - layerBoundingRect.centerPoint.y) *
-            heightChangedPercent -
+          heightChangedPercent -
           (currentSize.height * heightChangedPercent) / 2;
       else {
         var centerTopChange =
@@ -2469,7 +2469,7 @@
         if (resizable)
           leftDelta =
             (childCenterPoint.x - layerBoundingRect.centerPoint.x) *
-              widthChangedPercent -
+            widthChangedPercent -
             (currentSize.width * widthChangedPercent) / 2;
         else {
           var centerLeftChange =
