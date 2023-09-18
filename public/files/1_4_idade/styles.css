@@ -1,4 +1,4 @@
-body {
+﻿body {
   margin:0px;
   background-image:none;
   position:static;
@@ -130,7 +130,7 @@ body {
   border-width:0px;
   position:absolute;
   left:65px;
-  top:590px;
+  top:499px;
   width:260px;
   height:18px;
   display:flex;
@@ -163,7 +163,7 @@ body {
   border-width:0px;
   position:absolute;
   left:115px;
-  top:738px;
+  top:539px;
   width:50px;
   height:50px;
   display:flex;
@@ -193,7 +193,7 @@ body {
   border-width:0px;
   position:absolute;
   left:225px;
-  top:738px;
+  top:539px;
   width:50px;
   height:50px;
   display:flex;
@@ -378,7 +378,7 @@ body {
   border-width:0px;
   position:absolute;
   left:44px;
-  top:312px;
+  top:291px;
   width:135px;
   height:50px;
   display:flex;
@@ -449,7 +449,7 @@ body {
   border-width:0px;
   position:absolute;
   left:211px;
-  top:312px;
+  top:291px;
   width:135px;
   height:50px;
   display:flex;
@@ -520,7 +520,7 @@ body {
   border-width:0px;
   position:absolute;
   left:44px;
-  top:404px;
+  top:363px;
   width:135px;
   height:50px;
   display:flex;
@@ -591,7 +591,7 @@ body {
   border-width:0px;
   position:absolute;
   left:211px;
-  top:404px;
+  top:363px;
   width:135px;
   height:50px;
   display:flex;
@@ -662,7 +662,7 @@ body {
   border-width:0px;
   position:absolute;
   left:44px;
-  top:497px;
+  top:435px;
   width:135px;
   height:50px;
   display:flex;
@@ -733,7 +733,7 @@ body {
   border-width:0px;
   position:absolute;
   left:211px;
-  top:497px;
+  top:435px;
   width:135px;
   height:50px;
   display:flex;

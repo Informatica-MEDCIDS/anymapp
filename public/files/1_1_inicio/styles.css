@@ -1,4 +1,4 @@
-body {
+﻿body {
   margin:0px;
   background-image:none;
   position:static;
@@ -52,7 +52,7 @@ body {
   left:0px;
   top:0px;
   width:390px;
-  height:503px;
+  height:412px;
   background:inherit;
   background-color:rgba(255, 255, 255, 1);
   box-sizing:border-box;
@@ -70,7 +70,7 @@ body {
   left:0px;
   top:216px;
   width:390px;
-  height:503px;
+  height:412px;
   display:flex;
 }
 #u1 .text {
@@ -158,7 +158,7 @@ body {
   border-width:0px;
   position:absolute;
   left:55px;
-  top:304px;
+  top:284px;
   width:281px;
   height:54px;
   display:flex;
@@ -223,7 +223,7 @@ body {
   border-width:0px;
   position:absolute;
   left:45px;
-  top:422px;
+  top:404px;
   width:300px;
   height:83px;
   display:flex;
@@ -269,7 +269,7 @@ body {
   border-width:0px;
   position:absolute;
   left:140px;
-  top:569px;
+  top:517px;
   width:112px;
   height:40px;
   display:flex;
