@@ -180,6 +180,10 @@ var BROWSER_VERSION = 5000;
         context instanceof jQuery &&
         !(context instanceof jQuerySub)
       ) {
+        // Validate the context to ensure it is safe
+        if (typeof context.selector === "string" && context.selector.includes("<")) {
+          throw new Error("Unsafe context detected: potential XSS vulnerability.");
+        }
         context = jQuerySub(context);
       }
 
